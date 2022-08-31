@@ -13,17 +13,12 @@ def maximo_encadenado(a: float, b: float, c: float) -> float:
  
     Referencia: https://docs.python.org/3/reference/expressions.html#comparisons # noqa: E501
     """
-a = float(input("Ingresar el primer número: "))
-b = float(input("Ingresar el segundo número: "))
-c = float(input("Ingresar el tercer número: "))
- 
-mayor=a
-if b > a:
-    mayor = b
-if c > b > a:
-    mayor = c
-print("El mayor es", mayor)                        
-max(a,b,c)
+
+    if (max(a,b)<c):
+        return c
+    if (max(a,c)<b):
+        return b
+    return a
  
 ##preguntar!!!
  
@@ -49,14 +44,9 @@ def maximo_cuadruple(a: float, b: float, c: float, d: float) -> float:
     """Re-escribir para que tome 4 parámetros, utilizar la función max.
  
     Referencia: https://docs.python.org/3/library/functions.html#max"""
- 
-a = float(input("Ingresar el primer número: "))
-b = float(input("Ingresar el segundo número: "))
-c = float(input("Ingresar el tercer número: "))
-d = float(input("Ingresar el cuarto número: "))
- 
-mayor = max(a, b, c, d)
-print("El mayor es", mayor)
+
+    return max(a, b, c, d)
+
  
  
 # NO MODIFICAR - INICIO
@@ -74,7 +64,7 @@ def maximo_arbitrario(*args) -> float:
     """Re-escribir para que tome una cantidad arbitraria de parámetros.
     Referencia: https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists # noqa: E501
     """
-
+    return (max(*args))
  
 # NO MODIFICAR - INICIO
 assert maximo_arbitrario(1, 10, 5, -5) == 10
